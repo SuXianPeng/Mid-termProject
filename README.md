@@ -246,8 +246,7 @@ void refresh(){
 ![搜索1](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A21.PNG)<br>
 实现搜索截图2：<br>
 ![搜索2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A22.PNG)<br>
-
-点击搜索结果后的截图1：<br>
+点击搜索结果后的截图：<br>
 ![点击](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E7%82%B9%E5%87%BB.PNG)<br>
 第二部分
 ---------------
@@ -308,10 +307,10 @@ String[] selectionArgs=null;
 
 
 ```
-退出截图1：<br>
+退出截图1（第一次点击×）：<br>
 ![退出1](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA1.PNG)<br>
 
-退出截图2：<br>
+退出截图2（第二次点击×）：<br>
 ![退出2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA2.PNG)<br>
 
 
