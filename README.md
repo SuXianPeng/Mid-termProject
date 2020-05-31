@@ -246,3 +246,83 @@ void refresh(){
 ![搜索1](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A21.PNG)<br>
 实现搜索截图2：<br>
 ![搜索2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A22.PNG)<br>
+
+第二部分
+---------------
+对本次实验的一些要点细节及变化的介绍
+* 1.本次实验将记事本应用的创建、保存、删除图标的样式进行修改，将android：变为app：之后，上述图标都不在显示于菜单栏界面上，而是以文字的形式在点击右侧的三个点后显示：<br>
+实现代码：
+
+```
+<item android:id="@+id/menu_add"
+      android:icon="@drawable/ic_menu_compose"
+      android:title="@string/menu_add"
+      android:alphabeticShortcut='a'
+    app:showAsAction="always" />
+<item android:id="@+id/menu_save"
+      android:icon="@drawable/ic_menu_save"
+      android:alphabeticShortcut='s'
+      android:title="@string/menu_save"
+    app:showAsAction="ifRoom|withText" />
+<item android:id="@+id/menu_delete"
+      android:icon="@drawable/ic_menu_delete"
+      android:title="@string/menu_delete"
+    app:showAsAction="ifRoom|withText" />
+
+```
+例图：<br>
+![例图](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/image.png)<br>
+
+* 2.对搜索框实现的模糊搜索实现要点，主要实现思路是进行搜索框的提交事件进行监听并进行响应方法的定义与执行，在响应定义方法中使用oncreate方法中进行数据查询与数据装配的方法进行搜索内容的查询，不同之处在于，将selection条件设为标题名与 搜索内容相似条件，selectionArgs参数条件设为 %搜索内容% 的形式进行搜索，具体代码为（若想看该部分完整代码见第一部分的第四点的第二步所展示出的代码）：<br>
+```
+//当提交搜索框内容后执行的方法
+public boolean onQueryTextSubmit(String query) {
+    search(query);//查询数据库中匹配该结果的数据
+
+    return false;
+}
+
+//通过设置查询条件，达到模糊查询的实现,也是与oncreate方法中相关代码唯一不同的地方
+String selection=NotePad.Notes.COLUMN_NAME_TITLE+" LIKE ?";
+String[] selectionArgs={"%"+key+"%"};
+
+```
+
+* 3.进行点击搜索框内的×号，退出搜索框并显示已有的笔记内容操作实现要点，对点击×退出搜索框操作进行事件监听和响应方法，在响应方法中使用oncreate方法中进行数据查询与数据装配的方法进行搜索内容的查询即可，即selection条件与selectionArgs参数条件都为null，具体代码为（若想看该部分完整代码见第一部分的第四点的第二步所展示出的代码）：<br>
+```
+
+//设置点击×退出搜索框监听与响应事件
+mysearchview.setOnCloseListener(new SearchView.OnCloseListener() {
+    //添加点击关闭的监听事件，使得点击关闭后搜索出现有的所有笔记
+    @Override
+    public boolean onClose() {
+        refresh();
+        return false;
+    }
+});
+
+String selection=null;
+String[] selectionArgs=null;
+
+
+```
+退出截图1：<br>
+![退出1]https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA1.PNG)<br>
+
+退出截图2：<br>
+![退出2]https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA2.PNG)<br>
+
+
+* 4进行标准时间显示的实现要点，事先将时间转化为标准年月日、时分秒时间格式，在将此时间赋值到数据库中的修改时间即可，注意获取的系统时间是模拟器上显示的时间而不是本机电脑显示的时间,实现代码为:<br>
+```
+// 进行时间获取及格式的转换，最终将得到的时间赋值到数据表中的modification时间
+ContentValues values = new ContentValues();
+SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+String dateStr = dateformat.format(System.currentTimeMillis());
+values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateStr);
+
+```
+
+
+
+* 至此本次实验完成，以上即为对本次实验完成的结果以及过程等进行描述，若想知道更加详细的内容，请查看源代码或源文件。
