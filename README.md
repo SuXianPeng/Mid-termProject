@@ -247,6 +247,8 @@ void refresh(){
 实现搜索截图2：<br>
 ![搜索2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A22.PNG)<br>
 
+点击搜索结果后的截图1：<br>
+![点击](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E7%82%B9%E5%87%BB.PNG)<br>
 第二部分
 ---------------
 对本次实验的一些要点细节及变化的介绍
@@ -307,10 +309,10 @@ String[] selectionArgs=null;
 
 ```
 退出截图1：<br>
-![退出1]https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA1.PNG)<br>
+![退出1](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA1.PNG)<br>
 
 退出截图2：<br>
-![退出2]https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA2.PNG)<br>
+![退出2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E9%80%80%E5%87%BA2.PNG)<br>
 
 
 * 4进行标准时间显示的实现要点，事先将时间转化为标准年月日、时分秒时间格式，在将此时间赋值到数据库中的修改时间即可，注意获取的系统时间是模拟器上显示的时间而不是本机电脑显示的时间,实现代码为:<br>
