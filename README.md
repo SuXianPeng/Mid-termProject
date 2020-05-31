@@ -112,7 +112,14 @@ values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateStr);
 
 ```
 
-第二步在NoteList类中的onCreateOptionsMenu方法将第一步定义的菜单栏资源对象进行获取并实例化为SearchView对象进行搜索框相关属性的设置以及提交、输入值的响应事件进行监听与处理和设置点击×退出搜索框监听与响应事件，最终完成搜索框的模糊查询，退出会重新搜索当前存在的笔记记录功能，完整的实现了搜索功能；实现上述功能的代码如下<br>
+第二步在NoteList类中的onCreateOptionsMenu方法将第一步定义的菜单栏资源对象进行获取并实例化为SearchView对象进行搜索框相关属性的设置以及提交、输入值的响应事件进行监听与处理和设置点击×退出搜索框监听与响应事件，最终完成搜索框的模糊查询，退出会重新搜索当前存在的笔记记录功能，完整的实现了搜索功能<br>
+实现搜索截图1：<br>
+![搜索1](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A21.PNG)<br>
+实现搜索截图2：<br>
+![搜索2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A22.PNG)<br>
+点击搜索结果后的截图：<br>
+![点击](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E7%82%B9%E5%87%BB.PNG)<br>
+实现上述功能的代码如下：<br>
 ```
 public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate menu from XML resource
@@ -242,13 +249,9 @@ void refresh(){
 }
 
 ```
-实现搜索截图1：<br>
-![搜索1](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A21.PNG)<br>
-实现搜索截图2：<br>
-![搜索2](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E6%90%9C%E7%B4%A22.PNG)<br>
-点击搜索结果后的截图：<br>
-![点击](https://github.com/SuXianPeng/Mid-termProject/blob/master/%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E7%82%B9%E5%87%BB.PNG)<br>
-第二部分
+
+
+##第二部分
 ---------------
 对本次实验的一些要点细节及变化的介绍
 * 1.本次实验将记事本应用的创建、保存、删除图标的样式进行修改，将android：变为app：之后，上述图标都不在显示于菜单栏界面上，而是以文字的形式在点击右侧的三个点后显示：<br>
